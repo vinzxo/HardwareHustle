@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LeaderboardController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="500.0" prefWidth="400.0" spacing="20.0" style="-fx-background-color: #1a1a2e; -fx-border-color: #f1c40f; -fx-border-width: 3;">
+          
+          <children>
+              <VBox alignment="CENTER" spacing="5.0">
+                  <children>
+                      <Text fill="#f1c40f" strokeType="OUTSIDE" strokeWidth="0.0" text="HARDWARE HUSTLE">
+                          <font>
+                              <Font name="System Bold" size="28.0" />
+                          </font>
+                      </Text>
+                      <Text fill="#ecf0f1" strokeType="OUTSIDE" strokeWidth="0.0" text="Global High Scores">
+                          <font>
+                              <Font name="System Italic" size="16.0" />
+                          </font>
+                      </Text>
+                  </children>
+              </VBox>
+      
+              <ListView fx:id="leaderboardListView" prefHeight="280.0" prefWidth="340.0" style="-fx-background-color: #16213e;                           -fx-control-inner-background: #16213e;                           -fx-text-fill: white;                           -fx-font-family: 'Monospaced';                           -fx-font-size: 16px;                           -fx-border-color: #0f3460;                           -fx-border-radius: 5;                           -fx-background-radius: 5;">
+                  <VBox.margin>
+                      <Insets left="20.0" right="20.0" />
+                  </VBox.margin>
+              </ListView>
+      
+              <HBox alignment="CENTER" spacing="20.0">
+                  <children>
+                      <Button mnemonicParsing="false" onAction="#handleBack" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #e94560; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" text="BACK TO MENU" />
+                  </children>
+              </HBox>
+              
+              <Text fill="#533483" text="Keep Hustling, Students!">
+                  <font>
+                      <Font size="10.0" />
+                  </font>
+              </Text>
+          </children>
+          <padding>
+              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+          </padding>
+      </VBox>
+   </children>
+</StackPane>

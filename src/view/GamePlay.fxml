@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane style="-fx-background-color: #000; -fx-border-color: #f1c40f; -fx-border-width: 3;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GamePlayController">
+   <children>
+      <ImageView fx:id="background1" pickOnBounds="true" StackPane.alignment="CENTER">
+         <image>
+            <Image url="@../resources/images/backgroundgameplay.png" />
+         </image>
+      </ImageView>
+
+      <AnchorPane prefHeight="600.0" prefWidth="900.0">
+         <children>
+            <ImageView fx:id="background2" pickOnBounds="true">
+               <image>
+                  <Image url="@../resources/images/backgroundgameplay.png" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" layoutX="20.0" layoutY="14.0" prefHeight="50.0" prefWidth="860.0" spacing="50.0" style="-fx-background-color: rgba(0,0,0,0.5); -fx-background-radius: 10;" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+               <children>
+                  <Label fx:id="scoreLabel" text="SCORE: 00000" textFill="#f1c40f">
+                     <font><Font name="System Bold" size="18.0" /></font>
+                  </Label>
+                  <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="ANSWER THE HARDWARE QUESTION!" textFill="WHITE" HBox.hgrow="ALWAYS">
+                     <font><Font name="System Bold" size="16.0" /></font>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="heart1" style="-fx-text-fill: #e94560; -fx-font-size: 24; -fx-effect: dropshadow(three-pass-box, red, 10, 0, 0, 0);;" text="❤" textFill="#e74c3c">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="heart2" style="-fx-text-fill: #e94560; -fx-font-size: 24; -fx-effect: dropshadow(three-pass-box, red, 10, 0, 0, 0);;" text="❤" textFill="#e74c3c">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="heart3" style="-fx-text-fill: #e94560; -fx-font-size: 24; -fx-effect: dropshadow(three-pass-box, red, 10, 0, 0, 0);;" text="❤" textFill="#e74c3c">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+
+            <VBox alignment="CENTER" layoutX="524.0" layoutY="80.0" prefHeight="85.0" prefWidth="411.0" style="-fx-background-color: rgba(0,0,0,0.7); -fx-border-color: #ecf0f1; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 10;" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
+               <children>
+                  <Label fx:id="timerLabel" alignment="TOP_CENTER" style="-fx-background-color: rgba(20, 20, 40, 0.8); -fx-text-fill: #00d2ff; -fx-border-color: #00d2ff; -fx-border-width: 2; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 5 15 5 15; -fx-font-family: 'Consolas'; -fx-font-size: 18px; -fx-font-weight: bold;" text="7" textFill="WHITE" />
+                  <Label fx:id="questionLabel" alignment="CENTER" prefWidth="480.0" text="Fetching hardware question..." textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+
+            <ImageView fx:id="enemySprite" fitHeight="180.0" fitWidth="180.0" layoutX="51.0" layoutY="465.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/images/laziness.png" />
+               </image>
+            </ImageView>
+            
+            <ImageView fx:id="studentSprite" fitHeight="120.0" fitWidth="120.0" layoutX="359.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/images/student%20running.png" />
+               </image>
+            </ImageView>
+
+            <HBox alignment="CENTER" layoutX="50.0" layoutY="450.0" prefHeight="120.0" prefWidth="800.0" spacing="50.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+               <children>
+                  <Button fx:id="path1" onAction="#handlePathSelection" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #2c3e50; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-color: white; -fx-border-width: 3;" text="A: Printer">
+                     <HBox.margin>
+                        <Insets bottom="5.0" />
+                     </HBox.margin></Button>
+                  <Button fx:id="path2" onAction="#handlePathSelection" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #2c3e50; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-color: white; -fx-border-width: 3;" text="B: CPU">
+                     <HBox.margin>
+                        <Insets bottom="5.0" />
+                     </HBox.margin></Button>
+                  <Button fx:id="path3" onAction="#handlePathSelection" prefHeight="100.0" prefWidth="250.0" style="-fx-background-color: #2c3e50; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-color: white; -fx-border-width: 3;" text="C: Monitor">
+                     <HBox.margin>
+                        <Insets bottom="5.0" />
+                     </HBox.margin></Button>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
